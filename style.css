@@ -1,0 +1,845 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span{
+    color: #0a7b33;
+    text-shadow: 0 0 10px #0a7b33;
+}
+
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links{
+    display: flex;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #0a7b33;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .links a:hover{
+    color: #0a7b33;
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow:  0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: #0a7b33;
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container{
+    width: 60%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .image{
+    width: 600px;
+    height: 60vh;
+    border-radius: 5%;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 50px #0a7b33;
+}
+
+.main-container .image img{
+    width: 100%;
+}
+
+
+
+.main-container {
+    width: 100%; /* Full width for responsiveness */
+    max-width: 1200px; /* Set a max width for larger screens */
+    height: auto; /* Allow height to adjust automatically */
+    display: flex;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+}
+
+.main-container .image {
+    width: 100%; /* Full width */
+    max-width: 600px; /* Max width for the image container */
+    height: auto; /* Adjust height based on content */
+    border-radius: 10%; /* Rounded corners */
+    overflow: hidden; /* Hide overflow if needed */
+    box-shadow: 0 0 50px #0a7b33; /* Box shadow */
+}
+
+.main-container .image img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row; /* Align items side by side on larger screens */
+        justify-content: space-evenly; /* Space out items evenly */
+    }
+
+    .main-container .image {
+        height: 60vh; /* Set a fixed height for larger screens */
+    }
+}
+
+
+
+
+
+.about-photo {
+    width: 300px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 100%; /* Optional: make it circular */
+    display: block; /* Center the image */
+    margin: 10px auto; /* Center the image */
+}
+
+@keyframes animate {
+    0%{
+        scale: 1;
+    }
+    
+    50%{
+        scale: 1.05;
+    }
+    
+    100%{
+        scale: 1;
+    }
+}
+
+.main-container .content{
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+
+.content h1{
+    font-size: clamp(.01rem, 0.1rem + 5vw, 1.8rem);
+}
+
+.content h1 span{
+    color: #0a7b33;
+    text-shadow: 0  0 10px #0a7b33;
+}
+
+.content .typewriter{
+    font-size: clamp(.0001rem, 1rem + 5vw, 1.4rem);
+    font-weight: 600;
+}
+
+.content .typewriter-text{
+    color: #0a7b33;
+    text-shadow: 0 0 5px #0a7b33;
+}
+
+.content p{
+    font-size: clamp(0.2rem , 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Stack buttons on smaller screens */
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .btn-container {
+        margin: 30px; /* Adjust margin for smaller screens */
+    }
+
+    .btn {
+        font-size: .99rem; /* Adjust font size for smaller screens */
+    }
+}
+
+
+
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid #0a7b33;
+    border-radius: 50%;
+    color: #0a7b33;
+    margin: 5px 15px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.social-links i:hover{
+    scale: 1.3;
+    color: black;
+    background-color: #0a7b33;
+    filter: drop-shadow(0 0 10px #0a7b33);
+}
+
+.content button{
+    width: 50%;
+    height: 6vh;
+    margin: 30px;
+    background-color: #0a7b33;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+
+.content button:hover{
+    scale: 1.1;
+    color: #0a7b33;
+    border: 2px solid #0a7b33;
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px #0a7b33;
+}
+
+@media (max-width:884px) {
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+
+    .hamburg,
+    .cancel{
+        display: block;
+    }
+
+    .main-container .content{
+        width: 80%;
+    }
+
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    .main-container .image{
+        z-index: -1;
+        width: 50%;
+        height: 60%;
+    }
+}
+
+@media (max-width:440px){
+    .main-container .image{
+        width: 50%;
+        height: 60%;
+        margin-bottom: 0px;
+    }
+
+    .main-container .content{
+        width: 80%;
+    }
+
+    .main-container button{
+        margin-top: 15px;
+    }
+}
+
+
+
+
+#my-resume {
+    background-color: #1a1a1a; /* Dark background for contrast */
+    color: white; /* Text color */
+    padding: 20px; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+}
+
+#my-resume h2 {
+    color: #0a7b33; /* Heading color */
+    border-bottom: 2px solid #0a7b33; /* Underline */
+    margin-bottom: 10px; /* Spacing below the heading */
+}
+
+#my-resume .section {
+    margin: 20px 0; /* Margin between sections */
+}
+
+#my-resume .section h3 {
+    font-size: 1.5em; /* Section heading size */
+    margin-bottom: 5px; /* Spacing below section heading */
+}
+
+#my-resume .section p {
+    font-size: 1em; /* Paragraph text size */
+    margin: 5px 0; /* Margin between paragraphs */
+}
+
+#my-resume .section ul {
+    list-style-type: disc; /* Bullet points for lists */
+    padding-left: 20px; /* Indentation for lists */
+}
+
+#my-resume .section ul li {
+    margin: 5px 0; /* Margin between list items */
+}
+
+#my-resume a {
+    color: #0a7b33; /* Link color */
+    text-decoration: underline; /* Underline links */
+}
+
+#my-resume a:hover {
+    color: #0ff; /* Change link color on hover */
+}
+
+
+
+
+
+section {
+    display: block; /* Ensure sections are displayed */
+    color: #ffffff; /* Change text color to white for visibility */
+    padding: 20px; /* Add some padding for spacing */
+    background-color: rgba(255, 255, 255, 0.1); /* Light semi-transparent background for contrast */
+    margin: 10px 0; /* Margin between sections */
+    border-radius: 8px; /* Rounded corners for a softer look */
+}
+
+h2 {
+    color: #0a7b33; /* Heading color for better visibility */
+    border-bottom: 2px solid #0a7b33; /* Optional underline for headings */
+}
+
+ul {
+    list-style-type: disc; /* Use bullet points for the list */
+    padding-left: 20px; /* Add left padding to the list */
+}
+
+li {
+    color: #ffffff; /* Change list item text color to white */
+}
+
+p {
+    color: #ffffff; /* Text color for paragraph content */
+}
+
+a {
+    color: #0a7b33; /* Link color */
+    text-decoration: underline; /* Underline links for clarity */
+}
+
+a:hover {
+    color: #0ff; /* Change link color on hover */
+}
+
+
+
+
+/* Keep the navigation bar visible in mobile view */
+@media (max-width: 884px) {
+    nav {
+        position: fixed; /* Fixed positioning for mobile */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10; /* Ensure it's above other content */
+    }
+    section {
+        padding-top: 10vh; /* Add space for fixed navbar */
+    }
+}
+
+/* Style adjustments for section content */
+section {
+    color: white; /* Change text color for visibility */
+    padding: 20px; /* Add padding for better layout */
+}
+
+
+
+section {
+    display: none; /* Hide all sections by default */
+    color: white; /* Change text color for visibility */
+    padding: 20px; /* Add padding for better layout */
+}
+
+/* Optionally show the first section on load */
+section:first-of-type {
+    display: block; /* Show the first section initially */
+}
+
+
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Align it to the top */
+    z-index: 100; /* Ensure it appears above other content */
+    background-color: black; /* Set background color for visibility */
+}
+
+body {
+    padding-top: 10vh; /* Add padding to the top of the body to prevent content from being hidden behind the navbar */
+}
+
+section {
+    display: none; /* Hide all sections by default */
+    color: white; /* Change text color for visibility */
+    padding: 20px; /* Add padding for better layout */
+}
+
+/* Optionally show the first section on load */
+section:first-of-type {
+    display: block; /* Show the first section initially */
+}
+
+/* Other existing styles remain unchanged */
+
+
+
+
+
+#education {
+    background-color: #1a1a1a; /* Dark background */
+    color: white; /* Text color */
+    padding: 20px 0; /* Padding for top and bottom */
+}
+
+.timeline {
+    position: relative;
+    max-width: 8000px;
+    margin: auto;
+    padding: 5px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #2a2a2a; /* Slightly lighter background for items */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-item.left {
+    float: left;
+    clear: both;
+}
+
+.timeline-item.right {
+    float: right;
+    clear: both;
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1px;
+    color: #99a19c; /* Highlight color */
+}
+
+.timeline-text h2 {
+    font-size: 1.0rem;
+    margin: 4px 0;
+}
+
+.timeline-text h4 {
+    font-size: 1.0rem;
+    margin: 1px 0;
+    color: #cccccc; /* Light grey for subheading */
+}
+
+.timeline-text p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 10px) {
+    .timeline-item {
+        width: 40%; /* Make items take up more space on mobile */
+        margin: 5px auto;
+    }
+}
+
+
+
+.timeline {
+    position: relative;
+    padding: 9px 0;
+}
+
+.timeline-item {
+    width: 45%; /* Adjust width as needed */
+    margin: .0001px ; /* Add some spacing between items */
+}
+
+.timeline-item.left {
+    float: left;
+    margin-right: 300%; /* Add some spacing between left and right items */
+}
+
+.timeline-item.right {
+    float: right;
+    margin-left: 500%; /* Add some spacing between right and left items */
+}
+
+/* Clearfix for the container */
+.timeline::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+.timeline {
+    position: relative;
+    padding: 10px 0;
+}
+
+.timeline-item {
+    width: 45%; /* Adjust width as needed */
+    margin: 10px 0; /* Spacing between items */
+}
+
+.timeline-item.left {
+    float: left;
+    margin-right: 5%; /* Spacing between left and right items */
+}
+
+.timeline-item.right {
+    float: right;
+    margin-left: 5%; /* Spacing between right and left items */
+}
+
+/* Clearfix for the container */
+.timeline::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .timeline-item {
+        width: 100%; /* Full width for mobile */
+        margin-right: 0; /* No right margin */
+        margin-left: 0; /* No left margin */
+    }
+    
+    .timeline-item.left, .timeline-item.right {
+        float: none; /* Remove floating */
+    }
+}
+
+
+
+.skills {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin: auto;
+    color: white; /* Change text color as needed */
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.progress {
+    background-color: #444; /* Background for the progress bar */
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #0a7b33; /* Progress color */
+    height: 100%;
+    width: 0; /* Initially set to 0, will animate */
+    transition: width 1s ease-in-out; /* Animation for progress */
+}
+
+
+
+
+
+/* Gmail Icon */
+.gmail-link {
+    text-decoration: none;
+    font-size: 24px;
+    color: #EA4335; /* Google red */
+    display: flex;
+    align-items: center;
+}
+
+.gmail-link img {
+    margin-right: 8px; /* Spacing between image and text */
+}
+
+/* Footer Style */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 0;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+#experience .timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+#experience .timeline-item {
+    margin: 10px 0;
+    padding: 20px;
+    border-left: 3px solid #007bff;
+    background-color: #000000;
+    position: relative;
+    border-radius: 8px;
+}
+
+#experience .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+#experience .timeline-date {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#experience .timeline h2 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: bold;
+}
+
+#experience .timeline h4 {
+    margin: 8px 0;
+    color: #8a8585;
+}
+
+#experience .timeline p {
+    margin: 5px 0;
+}
+
+
+/* General styles for the timeline */
+#experience .timeline-item {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #91928e;
+    border-left: 5px solid #7e7f80;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Add a circle on the timeline */
+#experience .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #d9e1e9;
+    border-radius: 1000%;
+}
+
+/* Styling for timeline text */
+#experience .timeline-date {
+    font-weight: bold;
+    color: #2f3338;
+}
+
+#experience .timeline-text h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+#experience .timeline-text h4 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Desktop view styling */
+@media (min-width: 768px) {
+    #experience .timeline {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Mobile view styling - Enable scrolling for overflow */
+@media (max-width: 767px) {
+    #experience {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Ensure the elements don’t break into new lines */
+    }
+
+    #experience .timeline-item {
+        display: inline-block; /* Make items inline for horizontal scroll */
+        width: 100%; /* Ensure each item takes full screen width */
+        white-space: normal; /* Allow wrapping of text within each item */
+    }
+
+    #experience .timeline-item:before {
+        left: -5px; /* Adjust position of circle on the timeline */
+    }
+}
+
+
+/* Experience Section Styles */
+#experience {
+    background-color: #f8f8f8; /* Adjust the background color */
+    padding: 20px; /* Add padding */
+    margin: 20px 0; /* Add margin */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Ensure items within experience section are aligned properly */
+.timeline-item {
+    margin-bottom: 20px; /* Space between timeline items */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+
+    #experience {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
